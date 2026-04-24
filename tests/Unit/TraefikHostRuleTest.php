@@ -26,10 +26,8 @@ test('wildcard at apex is converted to anchored HostRegexp', function () {
 });
 
 test('wildcard with deeper parent domain is converted to anchored HostRegexp', function () {
-    expect(traefikHostRule('*.something.example.com'))
-        ->toBe('HostRegexp(`^[a-z0-9-]+\.something\.example\.com$`)');
-    expect(traefikHostRule('*.dev.example.com'))
-        ->toBe('HostRegexp(`^[a-z0-9-]+\.dev\.example\.com$`)');
+    expect(traefikHostRule('*.sandbox.example.com'))
+        ->toBe('HostRegexp(`^[a-z0-9-]+\.sandbox\.example\.com$`)');
 });
 
 test('emitted regex is anchored on both ends', function () {
